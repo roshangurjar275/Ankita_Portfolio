@@ -1,0 +1,2015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Full-Stack Visual Designer specializing in branding, motion graphics, video production, and 3D visualization. Creating compelling visual experiences for brands, startups, and creative teams.">
+    <meta name="keywords" content="visual designer, graphic design, motion graphics, video editing, 3D design, branding, UI design, creative director">
+    <meta name="author" content="Ankita Gurjar">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ankita Gurjar">
+    <meta property="og:description" content="Full-Stack Visual Designer creating compelling visual experiences across digital and visual mediums.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Ankita Gurjar">
+    <meta property="twitter:description" content="Full-Stack Visual Designer creating compelling visual experiences across digital and visual mediums.">
+    
+    <title>Ankita Gurjar</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #ffffff;
+            --primary-dark: #e0e0e0;
+            --secondary: #6366f1;
+            --accent: #8b5cf6;
+            --dark: #000000;
+            --dark-light: #0a0a0a;
+            --dark-medium: #1a1a1a;
+            --text: #ffffff;
+            --text-light: #a0a0a0;
+            --text-muted: #666666;
+            --bg: #000000;
+            --bg-alt: #0a0a0a;
+            --bg-card: #1a1a1a;
+            --border: #333333;
+            --gradient-1: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+            --gradient-2: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            --gradient-text: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.7), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+            --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background-color: var(--bg);
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+        
+        /* Abstract Background Elements */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--text);
+            letter-spacing: -0.03em;
+        }
+        
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+        }
+        
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+        }
+        
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+        }
+        
+        /* Skip Link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            z-index: 1000;
+            border-radius: 0 0 4px 0;
+            font-weight: 600;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: opacity 0.3s ease;
+        }
+        
+        .logo:hover {
+            opacity: 0.8;
+        }
+        
+        .logo img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+        
+        @media (max-width: 640px) {
+            .logo img {
+                height: 40px;
+            }
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--text);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a:focus {
+            color: var(--text);
+            outline: none;
+        }
+        
+        .nav-links a:hover::after,
+        .nav-links a:focus::after {
+            width: 100%;
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+            padding: 0.5rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: var(--bg);
+            color: var(--text);
+            padding: 12rem 2rem 8rem;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background-image: url('extracted_images/top-view-work-desk-with-drawing-pad-glasses-with-copy-space.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
+        @media (max-width: 968px) {
+            .hero {
+                background-attachment: scroll;
+            }
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+        
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 7rem);
+            font-weight: 800;
+            line-height: 0.95;
+            margin-bottom: 2rem;
+            color: var(--text);
+            letter-spacing: -0.04em;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+        }
+        
+        .hero-title-line {
+            display: block;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.25rem, 3vw, 2rem);
+            margin-bottom: 3rem;
+            color: var(--text);
+            font-weight: 300;
+            letter-spacing: -0.01em;
+            max-width: 600px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: var(--text);
+            color: var(--bg);
+            padding: 1rem 2.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--text);
+            display: inline-block;
+        }
+        
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--text);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--text);
+            padding: 1rem 2.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--text);
+            display: inline-block;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--text);
+            color: var(--bg);
+            transform: translateY(-2px);
+        }
+        
+        /* Main Content */
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        section {
+            margin-bottom: 10rem;
+            scroll-margin-top: 100px;
+            position: relative;
+        }
+        
+        .section-header {
+            text-align: left;
+            margin-bottom: 5rem;
+        }
+        
+        .section-header h2 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+            letter-spacing: -0.03em;
+        }
+        
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            max-width: 700px;
+            line-height: 1.6;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        
+        .about-image-wrapper {
+            position: relative;
+        }
+        
+        .about-image {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--border);
+        }
+        
+        .about-text {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+        
+        .about-text h3 {
+            font-size: 2rem;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-text p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .skill-category {
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--text-light);
+        }
+        
+        .skill-category h3 {
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+        }
+        
+        .skill-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text);
+        }
+        
+        .skill-item::before {
+            content: '◆';
+            color: var(--text);
+            font-size: 0.75rem;
+        }
+        
+        /* Tools Section */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .tool-card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid var(--border);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .tool-card:hover {
+            border-color: var(--text-light);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .tool-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tool-name {
+            font-weight: 600;
+            color: var(--text);
+            font-size: 1rem;
+        }
+        
+        /* Experience Section */
+        .experience-timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gradient-1);
+        }
+        
+        .experience-item {
+            position: relative;
+            padding-left: 3rem;
+            padding-bottom: 3rem;
+        }
+        
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -1.75rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--primary);
+        }
+        
+        .experience-header {
+            margin-bottom: 1rem;
+        }
+        
+        .experience-item h3 {
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+        
+        .experience-meta {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .experience-description {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+        
+        .experience-description ul {
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+        }
+        
+        .experience-description li {
+            margin-bottom: 0.75rem;
+            color: var(--text-light);
+        }
+        
+        /* Projects Section - Side Scrolling */
+        .projects-category {
+            margin-bottom: 6rem;
+        }
+        
+        .projects-category h3 {
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+            color: var(--text);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .projects-category h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--text);
+            border-radius: 2px;
+        }
+        
+        .projects-scroller {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 1rem 0 2rem;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: var(--text-light) var(--bg-alt);
+        }
+        
+        .projects-scroller::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .projects-scroller::-webkit-scrollbar-track {
+            background: var(--bg-alt);
+            border-radius: 4px;
+        }
+        
+        .projects-scroller::-webkit-scrollbar-thumb {
+            background: var(--text-light);
+            border-radius: 4px;
+        }
+        
+        .projects-scroller::-webkit-scrollbar-thumb:hover {
+            background: var(--text);
+        }
+        
+        .project-card {
+            background: var(--bg-card);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--border);
+            flex: 0 0 350px;
+            min-width: 350px;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--text-light);
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 280px;
+            background: var(--gradient-1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-image {
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .project-image:hover {
+            cursor: zoom-in;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+        
+        .project-image::after {
+            content: '👁';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            font-size: 2.5rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            z-index: 2;
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+        }
+        
+        .project-card:hover .project-image::after {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        
+        .project-image {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-image::before {
+            content: 'Click to view full size';
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            color: white;
+            font-size: 0.875rem;
+            font-weight: 600;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 3;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            white-space: nowrap;
+        }
+        
+        .project-card:hover .project-image::before {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .modal-content {
+            position: relative;
+            max-width: 95%;
+            max-height: 95vh;
+            margin: auto;
+            animation: zoomIn 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        @keyframes zoomIn {
+            from { transform: scale(0.7); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            max-height: 95vh;
+            object-fit: contain;
+            border-radius: 0.5rem;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: var(--text);
+            font-size: 2.5rem;
+            font-weight: 300;
+            line-height: 1;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.15);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            z-index: 1001;
+        }
+        
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: rotate(90deg) scale(1.1);
+        }
+        
+        body.modal-open {
+            overflow: hidden;
+        }
+        
+        /* Scroll animations */
+        .project-card {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .project-card:nth-child(1) { animation-delay: 0.1s; }
+        .project-card:nth-child(2) { animation-delay: 0.2s; }
+        .project-card:nth-child(3) { animation-delay: 0.3s; }
+        .project-card:nth-child(4) { animation-delay: 0.4s; }
+        .project-card:nth-child(5) { animation-delay: 0.5s; }
+        .project-card:nth-child(6) { animation-delay: 0.6s; }
+        .project-card:nth-child(7) { animation-delay: 0.7s; }
+        .project-card:nth-child(8) { animation-delay: 0.8s; }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Mobile modal adjustments */
+        @media (max-width: 640px) {
+            .modal-content {
+                max-width: 98%;
+                max-height: 90vh;
+            }
+            
+            .modal-close {
+                top: 10px;
+                right: 10px;
+                width: 40px;
+                height: 40px;
+                font-size: 2rem;
+            }
+            
+            .project-card {
+                flex: 0 0 280px;
+                min-width: 280px;
+            }
+        }
+        
+        .project-emoji {
+            font-size: 4rem;
+            z-index: 1;
+            position: relative;
+        }
+        
+        .project-content {
+            padding: 2rem;
+        }
+        
+        .project-card h4 {
+            color: var(--text);
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+        
+        .project-description {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tag {
+            background: var(--bg-alt);
+            color: var(--text-light);
+            padding: 0.375rem 0.875rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: 1px solid var(--border);
+        }
+        
+        
+        /* Legacy grid for non-scrolling sections */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        /* Contact Section */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+        
+        .contact-info {
+            background: var(--bg-card);
+            padding: 3rem;
+            border-radius: 1rem;
+            border: 1px solid var(--border);
+        }
+        
+        .contact-info h3 {
+            color: var(--text);
+            margin-bottom: 2rem;
+        }
+        
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+        }
+        
+        .contact-detail strong {
+            color: var(--text);
+            min-width: 80px;
+        }
+        
+        .contact-detail span {
+            color: var(--text-light);
+        }
+        
+        .contact-detail a {
+            color: var(--text);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .contact-detail a:hover {
+            opacity: 0.7;
+        }
+        
+        .contact-info h4 {
+            color: var(--text);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .social-link {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+        
+        .social-link:hover,
+        .social-link:focus {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--text);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .contact-form {
+            background: var(--bg-card);
+            padding: 3rem;
+            border-radius: 1rem;
+            border: 1px solid var(--border);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            background: var(--bg-alt);
+            color: var(--text);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--text);
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+        }
+        
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-muted);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+        
+        .submit-button {
+            background: var(--text);
+            color: var(--bg);
+            padding: 1rem 2.5rem;
+            border: 2px solid var(--text);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .submit-button:hover,
+        .submit-button:focus {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            background: transparent;
+            color: var(--text);
+            outline: 2px solid var(--text);
+            outline-offset: 2px;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--bg-alt);
+            color: var(--text-light);
+            text-align: center;
+            padding: 4rem 2rem;
+            margin-top: 8rem;
+            border-top: 1px solid var(--border);
+        }
+        
+        footer p {
+            opacity: 0.8;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: var(--bg);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: var(--shadow-lg);
+                padding: 2rem 0;
+                gap: 1.5rem;
+                border-bottom: 1px solid var(--border);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .hero {
+                padding: 6rem 1.5rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+            
+            main {
+                padding: 4rem 1.5rem;
+            }
+            
+            section {
+                margin-bottom: 5rem;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            nav {
+                padding: 1rem;
+            }
+            
+            .hero {
+                padding: 8rem 1rem 4rem;
+                min-height: auto;
+                background-attachment: scroll;
+            }
+            
+            .hero h1 {
+                font-size: clamp(2.5rem, 10vw, 5rem);
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+            }
+            
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            
+            .projects-category h3 {
+                font-size: 1.5rem;
+            }
+            
+            .skills-container,
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .experience-timeline {
+                padding-left: 1.5rem;
+            }
+            
+            .experience-item {
+                padding-left: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header role="banner">
+        <nav role="navigation" aria-label="Main navigation">
+            <a href="#" class="logo" aria-label="Home">
+                <img src="extracted_images/page_1_img_2.png" alt="Ankita Gurjar Logo" class="logo-image">
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a href="#about" role="menuitem">About</a></li>
+                <li role="none"><a href="#skills" role="menuitem">Skills</a></li>
+                <li role="none"><a href="#experience" role="menuitem">Experience</a></li>
+                <li role="none"><a href="#projects" role="menuitem">Projects</a></li>
+                <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero" role="region" aria-label="Hero section">
+        <div class="hero-content">
+            <h1>
+                <span class="hero-title-line">Ankita Gurjar</span>
+            </h1>
+            <p class="hero-subtitle">Crafted visual experiences that shape brands and create lasting impressions</p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn-primary">See my work</a>
+                <a href="#contact" class="btn-secondary">Get in touch</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <!-- About Me Section -->
+        <section id="about" aria-labelledby="about-heading">
+            <div class="section-header">
+                <h2 id="about-heading">About Me</h2>
+                <p class="section-subtitle">Crafting visual narratives that resonate and inspire</p>
+            </div>
+            <div class="about-content">
+                <div class="about-image-wrapper">
+                    <img src="extracted_images/page_2_img_2.jpeg" alt="Ankita Gurjar - Visual Designer" class="about-image" loading="lazy">
+                </div>
+                <div class="about-text">
+                    <h3>Hello, I'm Ankita Gurjar</h3>
+                    <p>Hello, I am a certified professional designer with expertise in graphic illustration, product design, and social media campaigns. With three years of experience in this field, I am dedicated to delivering the highest quality services in a timely manner.</p>
+                    <p>My goal is to establish long-lasting and mutually beneficial business relationships. I specialize in creating compelling visual experiences that help brands communicate their message effectively and connect with their audience.</p>
+                    <p>Throughout my career, I've worked with diverse clients to develop brand identities, design social media creatives, create conceptual designs, and produce engaging visual content. My approach combines creative innovation with strategic thinking, ensuring that every design serves a purpose and contributes to the overall brand narrative.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Skills Section -->
+        <section id="skills" aria-labelledby="skills-heading">
+            <div class="section-header">
+                <h2 id="skills-heading">Skills</h2>
+                <p class="section-subtitle">A comprehensive toolkit for visual storytelling</p>
+            </div>
+            <div class="skills-container">
+                <article class="skill-category">
+                    <h3>Graphic Design</h3>
+                    <ul class="skill-list" role="list">
+                        <li class="skill-item">Graphic Design</li>
+                        <li class="skill-item">Brand Identity Design</li>
+                        <li class="skill-item">Logo Design</li>
+                        <li class="skill-item">Print Design</li>
+                    </ul>
+                </article>
+                
+                <article class="skill-category">
+                    <h3>Digital & Social</h3>
+                    <ul class="skill-list" role="list">
+                        <li class="skill-item">Social Creative</li>
+                        <li class="skill-item">Web Design</li>
+                        <li class="skill-item">UI Design</li>
+                        <li class="skill-item">Landing Page Design</li>
+                    </ul>
+                </article>
+                
+                <article class="skill-category">
+                    <h3>Video & Motion</h3>
+                    <ul class="skill-list" role="list">
+                        <li class="skill-item">Video Editing</li>
+                        <li class="skill-item">GIF Creation</li>
+                        <li class="skill-item">Motion Graphics</li>
+                    </ul>
+                </article>
+                
+                <article class="skill-category">
+                    <h3>Creative Design</h3>
+                    <ul class="skill-list" role="list">
+                        <li class="skill-item">Conceptual Design</li>
+                        <li class="skill-item">Typography Creative</li>
+                        <li class="skill-item">Infographic Creative</li>
+                        <li class="skill-item">Party Flyer Design</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+        
+        <!-- Tools Section -->
+        <section id="tools" aria-labelledby="tools-heading">
+            <div class="section-header">
+                <h2 id="tools-heading">Tools & Software</h2>
+                <p class="section-subtitle">Mastering industry-standard creative tools</p>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">🎨</div>
+                    <div class="tool-name">Adobe Photoshop</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">✏️</div>
+                    <div class="tool-name">Adobe Illustrator</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">🎬</div>
+                    <div class="tool-name">After Effects</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">🎥</div>
+                    <div class="tool-name">Premiere Pro</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">🖼️</div>
+                    <div class="tool-name">Figma</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">🎭</div>
+                    <div class="tool-name">Blender</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Experience Section -->
+        <section id="experience" aria-labelledby="experience-heading">
+            <div class="section-header">
+                <h2 id="experience-heading">Experience</h2>
+                <p class="section-subtitle">Building brands and creating visual experiences</p>
+            </div>
+            <div class="experience-timeline">
+                <article class="experience-item">
+                    <div class="experience-header">
+                        <h3>Visual Designer</h3>
+                        <div class="experience-meta">
+                            <strong>Product / Media Company</strong> | <time datetime="2022-01">2022</time> - <time datetime="2024-12">Present</time>
+                        </div>
+                    </div>
+                    <div class="experience-description">
+                        <p>Lead visual design initiatives for campaigns, video content, motion graphics, and 3D assets across multiple platforms. Collaborate with cross-functional teams to develop cohesive visual strategies that align with brand objectives and audience engagement goals.</p>
+                        <ul>
+                            <li>Designed and produced motion graphics for digital campaigns reaching millions of viewers</li>
+                            <li>Created 3D visualizations and assets for product launches and marketing materials</li>
+                            <li>Led video production projects from concept to final delivery</li>
+                            <li>Developed visual guidelines and design systems for brand consistency</li>
+                            <li>Collaborated with marketing teams to create compelling visual narratives</li>
+                        </ul>
+                    </div>
+                </article>
+                
+                <article class="experience-item">
+                    <div class="experience-header">
+                        <h3>Visual Designer</h3>
+                        <div class="experience-meta">
+                            <strong>Creative Studio / Agency</strong> | <time datetime="2020-06">2020</time> - <time datetime="2021-12">2021</time>
+                        </div>
+                    </div>
+                    <div class="experience-description">
+                        <p>Designed comprehensive brand identities, social media creatives, marketing visuals, and promotional videos for diverse clients ranging from startups to established brands. Worked closely with creative directors and clients to translate concepts into compelling visual experiences.</p>
+                        <ul>
+                            <li>Developed complete brand identities including logos, color palettes, and visual guidelines</li>
+                            <li>Created social media creative campaigns that increased engagement by 40% on average</li>
+                            <li>Produced promotional videos and motion graphics for client campaigns</li>
+                            <li>Designed marketing materials including brochures, banners, and digital advertisements</li>
+                            <li>Managed multiple projects simultaneously while maintaining high creative standards</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects" aria-labelledby="projects-heading">
+            <div class="section-header">
+                <h2 id="projects-heading">Projects & Design Work</h2>
+                <p class="section-subtitle">Showcasing work across branding, posters, typography, concept design, and UI/UX</p>
+            </div>
+            
+            <!-- Branding & Logos -->
+            <div class="projects-category">
+                <h3>Branding & Logos</h3>
+                <div class="projects-scroller" role="list" aria-label="Branding and logo projects">
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_8_img_2.png')">
+                            <img src="extracted_images/page_8_img_2.png" alt="Logo Design Project" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>Logo Design</h4>
+                            <p class="project-description">Creative logo designs for various brands and businesses.</p>
+                            <div class="project-tags">
+                                <span class="tag">Logo Design</span>
+                                <span class="tag">Branding</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_8_img_3.png')">
+                            <img src="extracted_images/page_8_img_3.png" alt="Logo Design Project" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>Logo Design</h4>
+                            <p class="project-description">Creative logo designs for various brands and businesses.</p>
+                            <div class="project-tags">
+                                <span class="tag">Logo Design</span>
+                                <span class="tag">Branding</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_8_img_4.png')">
+                            <img src="extracted_images/page_8_img_4.png" alt="Logo Design Project" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>Logo Design</h4>
+                            <p class="project-description">Creative logo designs for various brands and businesses.</p>
+                            <div class="project-tags">
+                                <span class="tag">Logo Design</span>
+                                <span class="tag">Branding</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_8_img_5.png')">
+                            <img src="extracted_images/page_8_img_5.png" alt="Logo Design Project" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>Logo Design</h4>
+                            <p class="project-description">Creative logo designs for various brands and businesses.</p>
+                            <div class="project-tags">
+                                <span class="tag">Logo Design</span>
+                                <span class="tag">Branding</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_8_img_6.png')">
+                            <img src="extracted_images/page_8_img_6.png" alt="Logo Design Project" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>Logo Design</h4>
+                            <p class="project-description">Creative logo designs for various brands and businesses.</p>
+                            <div class="project-tags">
+                                <span class="tag">Logo Design</span>
+                                <span class="tag">Branding</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_8_img_7.png')">
+                            <img src="extracted_images/page_8_img_7.png" alt="Logo Design Project" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>Logo Design</h4>
+                            <p class="project-description">Creative logo designs for various brands and businesses.</p>
+                            <div class="project-tags">
+                                <span class="tag">Logo Design</span>
+                                <span class="tag">Branding</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_8_img_8.png')">
+                            <img src="extracted_images/page_8_img_8.png" alt="Logo Design Project" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>Logo Design</h4>
+                            <p class="project-description">Creative logo designs for various brands and businesses.</p>
+                            <div class="project-tags">
+                                <span class="tag">Logo Design</span>
+                                <span class="tag">Branding</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            
+            <!-- Posters -->
+            <div class="projects-category">
+                <h3>Posters</h3>
+                <div class="projects-scroller" role="list" aria-label="Poster design projects">
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_5_img_1.png')">
+                            <img src="extracted_images/page_5_img_1.png" alt="Poster Design" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>Poster Design</h4>
+                            <p class="project-description">Creative and eye-catching poster designs for events, campaigns, and promotions.</p>
+                            <div class="project-tags">
+                                <span class="tag">Poster</span>
+                                <span class="tag">Print Design</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_5_img_2.png')">
+                            <img src="extracted_images/page_5_img_2.png" alt="Poster Design" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>Poster Design</h4>
+                            <p class="project-description">Creative and eye-catching poster designs for events, campaigns, and promotions.</p>
+                            <div class="project-tags">
+                                <span class="tag">Poster</span>
+                                <span class="tag">Print Design</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_5_img_3.png')">
+                            <img src="extracted_images/page_5_img_3.png" alt="Poster Design" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>Poster Design</h4>
+                            <p class="project-description">Creative and eye-catching poster designs for events, campaigns, and promotions.</p>
+                            <div class="project-tags">
+                                <span class="tag">Poster</span>
+                                <span class="tag">Print Design</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_5_img_4.jpeg')">
+                            <img src="extracted_images/page_5_img_4.jpeg" alt="Poster Design" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>Poster Design</h4>
+                            <p class="project-description">Creative and eye-catching poster designs for events, campaigns, and promotions.</p>
+                            <div class="project-tags">
+                                <span class="tag">Poster</span>
+                                <span class="tag">Print Design</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_5_img_5.png')">
+                            <img src="extracted_images/page_5_img_5.png" alt="Poster Design" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>Poster Design</h4>
+                            <p class="project-description">Creative and eye-catching poster designs for events, campaigns, and promotions.</p>
+                            <div class="project-tags">
+                                <span class="tag">Poster</span>
+                                <span class="tag">Print Design</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_5_img_6.png')">
+                            <img src="extracted_images/page_5_img_6.png" alt="Poster Design" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>Poster Design</h4>
+                            <p class="project-description">Creative and eye-catching poster designs for events, campaigns, and promotions.</p>
+                            <div class="project-tags">
+                                <span class="tag">Poster</span>
+                                <span class="tag">Print Design</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_6_img_1.jpeg')">
+                            <img src="extracted_images/page_6_img_1.jpeg" alt="Poster Design" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>Poster Design</h4>
+                            <p class="project-description">Creative and eye-catching poster designs for events, campaigns, and promotions.</p>
+                            <div class="project-tags">
+                                <span class="tag">Poster</span>
+                                <span class="tag">Print Design</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_6_img_2.png')">
+                            <img src="extracted_images/page_6_img_2.png" alt="Poster Design" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>Poster Design</h4>
+                            <p class="project-description">Creative and eye-catching poster designs for events, campaigns, and promotions.</p>
+                            <div class="project-tags">
+                                <span class="tag">Poster</span>
+                                <span class="tag">Print Design</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_6_img_3.png')">
+                            <img src="extracted_images/page_6_img_3.png" alt="Poster Design" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>Poster Design</h4>
+                            <p class="project-description">Creative and eye-catching poster designs for events, campaigns, and promotions.</p>
+                            <div class="project-tags">
+                                <span class="tag">Poster</span>
+                                <span class="tag">Print Design</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_6_img_4.png')">
+                            <img src="extracted_images/page_6_img_4.png" alt="Poster Design" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>Poster Design</h4>
+                            <p class="project-description">Creative and eye-catching poster designs for events, campaigns, and promotions.</p>
+                            <div class="project-tags">
+                                <span class="tag">Poster</span>
+                                <span class="tag">Print Design</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_6_img_5.png')">
+                            <img src="extracted_images/page_6_img_5.png" alt="Poster Design" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>Poster Design</h4>
+                            <p class="project-description">Creative and eye-catching poster designs for events, campaigns, and promotions.</p>
+                            <div class="project-tags">
+                                <span class="tag">Poster</span>
+                                <span class="tag">Print Design</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            
+            <!-- Typography Creatives -->
+            <div class="projects-category">
+                <h3>Typography Creatives</h3>
+                <div class="projects-scroller" role="list" aria-label="Typography design projects">
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_4_img_1.jpeg')">
+                            <img src="extracted_images/page_4_img_1.jpeg" alt="Typography Creative Project" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>Typography Creative</h4>
+                            <p class="project-description">Creative typography designs and lettering projects showcasing artistic expression through text.</p>
+                            <div class="project-tags">
+                                <span class="tag">Typography</span>
+                                <span class="tag">Lettering</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_4_img_2.jpeg')">
+                            <img src="extracted_images/page_4_img_2.jpeg" alt="Typography Creative Project" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>Typography Creative</h4>
+                            <p class="project-description">Creative typography designs and lettering projects showcasing artistic expression through text.</p>
+                            <div class="project-tags">
+                                <span class="tag">Typography</span>
+                                <span class="tag">Lettering</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_4_img_3.jpeg')">
+                            <img src="extracted_images/page_4_img_3.jpeg" alt="Typography Creative Project" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>Typography Creative</h4>
+                            <p class="project-description">Creative typography designs and lettering projects showcasing artistic expression through text.</p>
+                            <div class="project-tags">
+                                <span class="tag">Typography</span>
+                                <span class="tag">Lettering</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            
+            <!-- Brand Creatives -->
+            <div class="projects-category">
+                <h3>Brand Creatives</h3>
+                <div class="projects-scroller" role="list" aria-label="Brand creative projects">
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_3_img_2.jpeg')">
+                            <img src="extracted_images/page_3_img_2.jpeg" alt="Brand Design Project" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>Branding Design</h4>
+                            <p class="project-description">I had the privilege of assisting a beloved company in updating their visual identity and revamping their brand to reflect a new and exciting business direction.</p>
+                            <div class="project-tags">
+                                <span class="tag">Brand Design</span>
+                                <span class="tag">Visual Identity</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_3_img_1.jpeg')">
+                            <img src="extracted_images/page_3_img_1.jpeg" alt="Brand Design Project" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>Branding Design</h4>
+                            <p class="project-description">I had the privilege of assisting a beloved company in updating their visual identity and revamping their brand to reflect a new and exciting business direction.</p>
+                            <div class="project-tags">
+                                <span class="tag">Brand Design</span>
+                                <span class="tag">Visual Identity</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_3_img_3.jpeg')">
+                            <img src="extracted_images/page_3_img_3.jpeg" alt="Brand Design Project" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>Branding Design</h4>
+                            <p class="project-description">I had the privilege of assisting a beloved company in updating their visual identity and revamping their brand to reflect a new and exciting business direction.</p>
+                            <div class="project-tags">
+                                <span class="tag">Brand Design</span>
+                                <span class="tag">Visual Identity</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            
+            <!-- Concept Design -->
+            <div class="projects-category">
+                <h3>Concept Design</h3>
+                <div class="projects-scroller" role="list" aria-label="Conceptual design projects">
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_7_img_1.png')">
+                            <img src="extracted_images/page_7_img_1.png" alt="Conceptual Design Project" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>Conceptual Design</h4>
+                            <p class="project-description">Innovative conceptual designs that push creative boundaries and explore new visual possibilities.</p>
+                            <div class="project-tags">
+                                <span class="tag">Conceptual Design</span>
+                                <span class="tag">Creative</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_7_img_2.png')">
+                            <img src="extracted_images/page_7_img_2.png" alt="Conceptual Design Project" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>Conceptual Design</h4>
+                            <p class="project-description">Innovative conceptual designs that push creative boundaries and explore new visual possibilities.</p>
+                            <div class="project-tags">
+                                <span class="tag">Conceptual Design</span>
+                                <span class="tag">Creative</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_7_img_3.jpeg')">
+                            <img src="extracted_images/page_7_img_3.jpeg" alt="Conceptual Design Project" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>Conceptual Design</h4>
+                            <p class="project-description">Innovative conceptual designs that push creative boundaries and explore new visual possibilities.</p>
+                            <div class="project-tags">
+                                <span class="tag">Conceptual Design</span>
+                                <span class="tag">Creative</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_7_img_4.jpeg')">
+                            <img src="extracted_images/page_7_img_4.jpeg" alt="Conceptual Design Project" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>Conceptual Design</h4>
+                            <p class="project-description">Innovative conceptual designs that push creative boundaries and explore new visual possibilities.</p>
+                            <div class="project-tags">
+                                <span class="tag">Conceptual Design</span>
+                                <span class="tag">Creative</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            
+            <!-- UI/UX Website Design -->
+            <div class="projects-category">
+                <h3>UI/UX Website Design</h3>
+                <div class="projects-scroller" role="list" aria-label="UI/UX website design projects">
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_9_img_3.png')">
+                            <img src="extracted_images/page_9_img_3.png" alt="UI/UX Website Design Project" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>UI/UX Website Design</h4>
+                            <p class="project-description">I worked with clients from different industries to create unique and memorable website designs for their businesses.</p>
+                            <div class="project-tags">
+                                <span class="tag">UI Design</span>
+                                <span class="tag">UX Design</span>
+                                <span class="tag">Web Design</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_9_img_2.png')">
+                            <img src="extracted_images/page_9_img_2.png" alt="UI/UX Website Design Project" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>UI/UX Website Design</h4>
+                            <p class="project-description">I worked with clients from different industries to create unique and memorable website designs for their businesses.</p>
+                            <div class="project-tags">
+                                <span class="tag">UI Design</span>
+                                <span class="tag">UX Design</span>
+                                <span class="tag">Web Design</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_9_img_4.png')">
+                            <img src="extracted_images/page_9_img_4.png" alt="UI/UX Website Design Project" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>UI/UX Website Design</h4>
+                            <p class="project-description">I worked with clients from different industries to create unique and memorable website designs for their businesses.</p>
+                            <div class="project-tags">
+                                <span class="tag">UI Design</span>
+                                <span class="tag">UX Design</span>
+                                <span class="tag">Web Design</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_9_img_5.png')">
+                            <img src="extracted_images/page_9_img_5.png" alt="UI/UX Website Design Project" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>UI/UX Website Design</h4>
+                            <p class="project-description">I worked with clients from different industries to create unique and memorable website designs for their businesses.</p>
+                            <div class="project-tags">
+                                <span class="tag">UI Design</span>
+                                <span class="tag">UX Design</span>
+                                <span class="tag">Web Design</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card" role="listitem">
+                        <div class="project-image" onclick="openModal('extracted_images/page_10_img_2.png')">
+                            <img src="extracted_images/page_10_img_2.png" alt="UI/UX Website Design Project" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h4>UI/UX Website Design</h4>
+                            <p class="project-description">I worked with clients from different industries to create unique and memorable website designs for their businesses.</p>
+                            <div class="project-tags">
+                                <span class="tag">UI Design</span>
+                                <span class="tag">UX Design</span>
+                                <span class="tag">Web Design</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" aria-labelledby="contact-heading">
+            <div class="section-header">
+                <h2 id="contact-heading">Contact</h2>
+                <p class="section-subtitle">Let's create something amazing together</p>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <strong>Email:</strong>
+                            <span><a href="mailto:agurjar777@gmail.com" style="color: var(--primary); text-decoration: none;">agurjar777@gmail.com</a></span>
+                        </div>
+                        <div class="contact-detail">
+                            <strong>Phone:</strong>
+                            <span><a href="tel:+918770777935" style="color: var(--primary); text-decoration: none;">+91 87707 77935</a></span>
+                        </div>
+                        <div class="contact-detail">
+                            <strong>Phone (Alt):</strong>
+                            <span><a href="tel:+918871151285" style="color: var(--primary); text-decoration: none;">+91 88711 51285</a></span>
+                        </div>
+                    </div>
+                    <div class="social-links" role="list">
+                        <h4 style="color: var(--text); margin-bottom: 1rem; font-size: 1.1rem;">Connect With Me</h4>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <a href="https://www.linkedin.com/in/ankita-gurjar-60781a158/" class="social-link" aria-label="LinkedIn profile" target="_blank" rel="noopener noreferrer" style="width: auto; padding: 0.75rem 1.5rem; border-radius: 0.5rem;">
+                                <span style="margin-right: 0.5rem;">🔗</span>LinkedIn
+                            </a>
+                            <a href="https://instagram.com/ankita_gurjar_?utm_medium=copy_link" class="social-link" aria-label="Instagram profile" target="_blank" rel="noopener noreferrer" style="width: auto; padding: 0.75rem 1.5rem; border-radius: 0.5rem;">
+                                <span style="margin-right: 0.5rem;">📷</span>Instagram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" aria-label="Contact form">
+                    <div class="form-group">
+                        <label for="name">Name <span aria-label="required">*</span></label>
+                        <input type="text" id="name" name="name" required aria-required="true" autocomplete="name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email <span aria-label="required">*</span></label>
+                        <input type="email" id="email" name="email" required aria-required="true" autocomplete="email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" autocomplete="off">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message <span aria-label="required">*</span></label>
+                        <textarea id="message" name="message" required aria-required="true" rows="6"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Modal for Project Images -->
+    <div id="projectModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()" aria-label="Close modal">&times;</span>
+            <img id="modalImage" src="" alt="Project image">
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <p>&copy; <time id="current-year">2024</time> Ankita Gurjar. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        // Modal functionality
+        function openModal(imageSrc) {
+            const modal = document.getElementById('projectModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.classList.add('active');
+            modalImg.src = imageSrc;
+            document.body.classList.add('modal-open');
+            modal.setAttribute('aria-hidden', 'false');
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('projectModal');
+            modal.classList.remove('active');
+            document.body.classList.remove('modal-open');
+            modal.setAttribute('aria-hidden', 'true');
+        }
+        
+        // Close modal when clicking outside the image
+        document.getElementById('projectModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+        
+        // Mobile menu toggle
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const isExpanded = navLinks.classList.contains('active');
+            menuToggle.setAttribute('aria-expanded', isExpanded);
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Update current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Form submission handler - Google Sheets integration
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = this;
+            const submitButton = form.querySelector('.submit-button');
+            const originalButtonText = submitButton.textContent;
+            
+            // Disable button and show loading state
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value || 'No Subject',
+                message: document.getElementById('message').value,
+                timestamp: new Date().toISOString()
+            };
+            
+            // Replace with your Google Apps Script Web App URL
+            const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+            
+            // Send data to Google Sheets
+            fetch(scriptURL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(() => {
+                // Success - show message
+                alert('Thank you for your message! I will get back to you soon.');
+                form.reset();
+                submitButton.disabled = false;
+                submitButton.textContent = originalButtonText;
+            })
+            .catch((error) => {
+                // Error handling
+                console.error('Error:', error);
+                alert('There was an error sending your message. Please try again or contact me directly at agurjar777@gmail.com');
+                submitButton.disabled = false;
+                submitButton.textContent = originalButtonText;
+            });
+        });
+        
+        // Add scroll animation on load
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
